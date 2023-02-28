@@ -1,0 +1,58 @@
+{
+   "name": "group-savings-plan-api",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "ts-node src/index.ts",
+      "start:dev": "nodemon -w *.ts -w .env src/index.ts",
+      "prod": "tsc && node ./build/index.js",
+      "tsc": "tsc",
+      "typeorm": "typeorm-ts-node-commonjs",
+      "migration": "ts-node ./node_modules/typeorm/cli.js migration:run -d build/data-source.js",
+      "add-migration": "typeorm migration:generate src/migration/migration -d build/data-source.js",
+      "new-migration": "typeorm migration:create src/migration/migration",
+      "revert-migration": "typeorm migration:revert",
+      "create-entity": "typeorm entity:create src/entity "
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Oladimejiibitoye/group-savings-plan-api.git"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/Oladimejiibitoye/group-savings-plan-api/issues"
+   },
+   "homepage": "https://github.com/Oladimejiibitoye/group-savings-plan-api#readme",
+   "devDependencies": {
+      "@types/node": "^16.11.65",
+      "nodemon": "^2.0.20",
+      "ts-node": "10.7.0",
+      "typescipt": "^1.0.0",
+      "typescript": "4.5.2"
+   },
+   "dependencies": {
+      "@types/bcryptjs": "^2.4.2",
+      "@types/body-parser": "^1.19.2",
+      "@types/cors": "^2.8.12",
+      "@types/helmet": "^4.0.0",
+      "@types/jsonwebtoken": "^8.5.9",
+      "bcryptjs": "^2.4.3",
+      "body-parser": "^1.20.1",
+      "class-validator": "^0.13.2",
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "helmet": "^6.0.0",
+      "jsonwebtoken": "^8.5.1",
+      "knex": "^2.3.0",
+      "morgan": "^1.10.0",
+      "mysql2": "^2.3.3",
+      "reflect-metadata": "^0.1.13",
+      "ts-node-dev": "^2.0.0",
+      "typeorm": "^0.3.10"
+   }
+}
